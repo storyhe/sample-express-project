@@ -1,0 +1,25 @@
+version: '3.0'
+
+services:
+  session-redis:
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
+
+  cache-redis:
+    image: redis
+    restart: always
+    ports:
+      - 6380:6379
+  db:
+    image: "mysql"
+    environment:
+      MYSQL_DATABASE: gboard
+      MYSQL_ROOT_PASSWORD: gboard1234
+      MYSQL_ROOT_HOST: '%'
+      TZ: Asia/Seoul
+    restart: always
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+    ports:
+      - "3306:3306"
