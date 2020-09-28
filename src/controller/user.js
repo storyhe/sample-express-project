@@ -1,5 +1,4 @@
-const {promisify} = require('util');
-const sessionClient = require('./redisClient').session
+const { sessionGet } = require('./redisClient')
 
 class UserController {
   constructor() {
@@ -11,10 +10,7 @@ class UserController {
       let token = req.headers.authorization.split('Bearer ')[1]
               
       if (token) {
-        const getUserData = promisify(sessionClient.get)
-          .bind(sessionClient);
-
-        let userdata = await getUserData('token:' + token)
+        let userdata = await sessionGet('token:' + token)
                 
         if (userdata) {
           req.user = userdata
