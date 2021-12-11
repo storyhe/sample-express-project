@@ -1,4 +1,4 @@
-class UserController {
+export default class UserController {
   constructor() {
         
   }
@@ -31,5 +31,3 @@ class UserController {
 
 }
 
-
-module.exports = UserController

@@ -1,5 +1,6 @@
 
-class UserModel {
+export default class UserModel {
+  private db
   constructor(db) {
     this.db = db
   }
@@ -9,5 +10,3 @@ class UserModel {
   }
 
 }
-
-module.exports = UserModel

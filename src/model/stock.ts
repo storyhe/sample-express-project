@@ -1,5 +1,7 @@
 
-class StockModel {
+export default class StockModel {
+  private db: any
+
   constructor(db) {
     this.db = db
   }
@@ -9,5 +11,3 @@ class StockModel {
   }
 
 }
-
-module.exports = StockModel

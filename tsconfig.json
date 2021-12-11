@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "ES2019",
+    "outDir": "./dist",
+    "moduleResolution": "Node",
+    "lib": ["ES2015", "DOM", "DOM.Iterable"],
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "declaration": true, 
+    "typeRoots": [
+      "./src/types", // this is where you define your types
+      "./node_modules/@types" //this where npm packages containing types are located
+    ]
+  },
+  "include": ["./src/**/*", "src/types"],
+  "exclude": ["node_modules", "dist"]
+}
